@@ -1,0 +1,51 @@
+<html>
+      <head>
+            <title>
+                  <% title %>
+
+            </title>
+            <script src="https://kit.fontawesome.com/74ad6da199.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="/css/contact.css">
+            </head>
+      <body>
+            <div id="container">
+                  <h1>Contact List</h1>
+                        <!-- list -->
+                        <div id="container-child">
+                              <ul>
+                                    <% for(let i of contact_list) { %>
+
+                                          <li>
+                                                <div>
+                                                      <p><%= i.name %></p>
+                                                      <p><%= i.phone %></p>
+                                                      <div class="delete-button">
+                                                            <a href="/delete-contact/<%=i.id%>">
+                                                                 <i class="fa-solid fa-trash"></i>
+                                                            </a>
+                                                      </div>
+                                                </div>
+                                                
+                                          </li>
+
+
+                                    <% } %>
+
+
+                              </ul>
+                              <!-- form -->
+                              <h2>Add Contacts fromhere!!</h2>
+                              <div>
+                                    <form action="/create-contact" method="POST">
+                                          <input type="text" name="name" placeholder="Enter Name" required></br>
+                                          <input type="number" name="phone" placeholder="Enter Number" required></br>
+                                          <button type="submit" placeholder="Submit">SUBMIT</button>
+                                    </form>
+                              </div>
+                        </div>
+            </div>
+                              
+                  <script type="text/javascript" src="/js/home.js"></script>
+      </body>
+
+</html>

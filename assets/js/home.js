@@ -1,0 +1,1 @@
+console.log("yes home.js file is working");
